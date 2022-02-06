@@ -78,9 +78,9 @@ body {
 .MS div.Virtus {
   color: white;
   position: absolute;
-  top: 130px;
-  margin-left: -30px;
-  height: 260px;
+  top: 110px;
+  margin-left: -20px;
+  height: 240px;
 }
 
 .MS div.sec {
@@ -93,7 +93,7 @@ body {
 
 .MS a.search {
   position: absolute;
-  top: 375px;
+  top: 385px;
   left: 30px;
   padding: 10px;
   background-color: #003366;
