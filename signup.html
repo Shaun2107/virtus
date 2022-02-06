@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/CSSsignup.css" rel="stylesheet" type="text/css" />
+    <title>Our Mission</title>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="home" href="index.html">Home</a>
+      <a class="book" href="book.html">Book A Ride</a>
+      <a class="drive" href="safety.html">Safety</a>
+      <a class="mission" href="about.html">About Us</a>
+    </div>
+
+    <div class="main">
+      <div class="form-box">
+        <div id="lit" class="text">
+          <h1>Sign in to start booking!</h1>
+        </div>
+        <div class="button-box">
+          <div id="btn"></div>
+          <button
+            type="button"
+            id="login-btn"
+            class="toggle-btn"
+            onclick="login()"
+          >
+            Log In
+          </button>
+          <button
+            type="button"
+            id="signin-btn"
+            class="toggle-btn"
+            onclick="register()"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <form id="login" class="input-grp" action="index.html">
+          <input
+            id="userid"
+            type="text"
+            class="input-field"
+            placeholder="User Id"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+          <input type="checkbox" class="checkbox" /><span
+            >Remember password</span
+          >
+          <button class="submit-btn" onclick="logincheck()">Log In</button>
+        </form>
+
+        <form id="register" class="input-grp" action="index.html">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Email Address"
+            required
+          />
+          <input
+            id="userid"
+            type="text"
+            class="input-field"
+            placeholder="User Id"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+          <input type="checkbox" class="checkbox" /><span
+            >I agree to the Terms and Conditions.</span
+          >
+          <button type="submit" class="submit-btn" onclick="logincheck()">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var x = document.getElementById("login");
+      var x1 = document.getElementsByClassName("submit-btn");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+      var a = document.getElementById("login-btn");
+      var b = document.getElementById("signin-btn");
+      var username = document.getElementById("userid").value;
+
+      function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+        a.style.color = "black";
+        b.style.color = "white";
+      }
+
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+        a.style.color = "white";
+        b.style.color = "black";
+      }
+
+      function logincheck() {
+        localStorage.setItem("loginkey", "1");
+        console.log(localStorage.getItem("loginkey"));
+      }
+    </script>
+  </body>
+</html>

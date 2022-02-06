@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Details</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Righteous&display=swap");
+      body {
+        margin: 0px;
+        font-family: Poppins, Helvetica, sans-serif;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        transition-duration: 0.3s;
+        position: relative;
+      }
+      .topnav a:hover {
+        color: white;
+      }
+      .topnav a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 80%;
+        height: 2px;
+        top: 37px;
+        left: 14px;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      .topnav .home::before {
+        width: 66%;
+      }
+      .topnav .drive::before {
+        width: 69%;
+      }
+      .topnav .mission::before {
+        width: 76%;
+      }
+      .topnav .login::before {
+        background-color: transparent;
+      }
+      .topnav .login:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .topnav a:hover::before {
+        transform: scaleX(1);
+      }
+      .topnav a.home {
+        background-color: #003366;
+      }
+      .topnav a.login {
+        float: right;
+        margin-right: 0px;
+      }
+
+      .image {
+        height: 350px;
+        overflow: hidden;
+        object-fit: cover;
+      }
+      .details {
+        margin-left: 50px;
+      }
+      .details p {
+        margin-top: 0px;
+        margin-bottom: 5px;
+      }
+      .helpdiv {
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+      }
+      .help-btn {
+        border: none;
+        text-decoration: none;
+        background-color: #003366;
+        color: white;
+        padding: 8px 10px;
+        transition-duration: 0.3s;
+        position: relative;
+      }
+      .help-btn:hover {
+        color: white;
+      }
+      .help-btn::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 90%;
+        height: 2px;
+        bottom: 6px;
+        left: 10px;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      .help-btn:hover::before {
+        transform: scaleX(1);
+      }
+      /*footer stlying*/
+      .footer {
+        background-color: #333;
+        color: #ffffff;
+        margin-bottom: -100px;
+        margin-top: 10px;
+        padding: 10px 10px;
+      }
+      .footer h3 {
+        padding-left: 30px;
+      }
+      .footer li {
+        list-style: none;
+        margin-bottom: 2px;
+      }
+      .footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .footer .msg {
+        font-family: monospace;
+        opacity: 0.5;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body onload="popup()">
+    <div class="topnav">
+      <a class="home" href="index.html">Home</a>
+      <a class="book" href="book.html">Book A Ride</a>
+      <a class="drive" href="safety.html">Safety</a>
+      <a class="mission" href="about.html">About Us</a>
+    </div>
+
+    <div class="image">
+      <img src="images/person in wheelchair.jpg" height="870" width="auto" />
+    </div>
+
+    <div class="details">
+      <h1>Ride Details:</h1>
+      <p>Your car will reach you in: 7 mins</p>
+      <p id="cartype">Car Details: Blue Ford Explorer</p>
+      <p>License Plate Number: A11223</p>
+      <p>Driver Name: Rohit Sharma</p>
+    </div>
+    <div class="helpdiv">
+      <a class="help-btn" href="about.html#contactdiv"
+        >Need Help? Click Here.</a
+      >
+    </div>
+
+    <div class="footer">
+      <h3>Virtus</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book A Ride</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <p class="msg">Made by Shaun, Khadija, Zahid, Jashan.</p>
+      </ul>
+    </div>
+    <script>
+      function popup() {
+        swal(
+          "Ride Booked!",
+          "Payment will be deducted after ride ends.",
+          "success"
+        );
+
+        if (localStorage.getItem("vehicle") == "SUV") {
+          document.getElementById("cartype").innerText =
+            "Car Details: Blue Ford Explorer";
+        }
+        if (localStorage.getItem("vehicle") == "VAN") {
+          document.getElementById("cartype").innerText =
+            "Car Details: Red Chrysler Pacifica";
+        }
+      }
+    </script>
+  </body>
+</html>

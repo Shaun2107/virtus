@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Mission</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Righteous&display=swap");
+    body {
+      margin: 0px;
+      font-family: Poppins, Helvetica, sans-serif;
+    }
+
+    /*Navigation bar styling*/
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      transition-duration: 0.3s;
+      position: relative;
+    }
+    .topnav a:hover {
+      color: white;
+    }
+    .topnav a::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 80%;
+      height: 2px;
+      top: 37px;
+      left: 14px;
+      background-color: white;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .topnav .home::before {
+      width: 66%;
+    }
+    .topnav .drive::before {
+      width: 69%;
+    }
+    .topnav .mission::before {
+      width: 76%;
+    }
+    .topnav .login::before {
+      background-color: transparent;
+    }
+    .topnav .login:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .topnav a:hover::before {
+      transform: scaleX(1);
+    }
+    .topnav a.home {
+      background-color: #003366;
+    }
+    .topnav a.login {
+      float: right;
+      margin-right: 0px;
+    }
+    /*Main Text*/
+    .aboutText {
+      overflow: hidden;
+      height: 450px;
+    }
+    .aboutText img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .aboutText div.title1 {
+      position: absolute;
+      color: white;
+      top: 225px;
+      left: 30px;
+      font-size: 50px;
+      font-family: Righteous;
+      text-align: center;
+      text-decoration: underline;
+    }
+    .sec-text {
+      padding-top: 20px;
+      padding-right: 60px;
+      padding-left: 80px;
+      font-size: larger;
+      font-weight: 500;
+      padding-bottom: 10px;
+    }
+    .sec-text h2 {
+      font-size: 30px;
+      text-decoration: underline;
+      margin-left: -25px;
+    }
+    .missionText {
+      overflow: hidden;
+      height: 450px;
+      position: relative;
+    }
+    .missionText img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .missionText div.title {
+      position: absolute;
+      color: black;
+      top: 225px;
+      right: 80px;
+      font-size: 50px;
+      font-family: Righteous;
+      text-align: center;
+      text-decoration: underline;
+    }
+    #sec-text2 {
+      padding-top: 0px;
+      padding-bottom: 20px;
+    }
+    .contact {
+      padding-top: 20px;
+      padding-right: 60px;
+      padding-left: 80px;
+      font-size: larger;
+      font-weight: 500;
+      padding-bottom: 40px;
+    }
+    .contacthdrbox {
+      padding-left: 55px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #003366;
+      color: white;
+    }
+    .contactheader {
+      font-size: 30px;
+    }
+
+    /*footer styling*/
+    .footer {
+      background-color: #333;
+      color: #ffffff;
+      margin-bottom: -100px;
+      margin-top: 10px;
+      padding: 10px 10px;
+    }
+    .footer h3 {
+      padding-left: 30px;
+    }
+    .footer li {
+      list-style: none;
+      margin-bottom: 2px;
+    }
+    .footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .footer .msg {
+      font-family: monospace;
+      opacity: 0.5;
+      text-align: right;
+    }
+  </style>
+  <body onload="loginchecker()">
+    <div class="topnav">
+      <a class="home" href="index.html">Home</a>
+      <a class="book" href="book.html">Book A Ride</a>
+      <a class="drive" href="safety.html">Safety</a>
+      <a class="mission" href="about.html">About Us</a>
+      <a id="in" class="login" href="signup.html" onclick="signout()">Log In</a>
+    </div>
+
+    <div class="aboutText">
+      <img src="images/1140-wife-hugging-husband-in-wheelchair.jpg" alt="" />
+      <div class="title1">About Us</div>
+    </div>
+    <div class="sec-text">
+      <h2>Who Are We?</h2>
+      We are a team of change makers hoping to make our mark through innovative
+      builds coupled with determination to build the world's tomorrow with the
+      dreams of today.
+    </div>
+
+    <div class="sec-text" id="sec-text2">
+      <h2>Our Mission</h2>
+      Our mission is to empower people of determination and provide them with
+      the resources they need to make transportation problems an issue of the
+      past! Along with easing the lives of people of determination Virtus will
+      be pivotal in maintaining the innovative stride among youngsters. Our
+      website has enabled the differently-abled to connect with each other, feel
+      a new sense of independence, and will ultimately lift their spirits. With
+      this, we are able to contribute and make a change in society and further
+      harbor the theme of innovation within society.
+    </div>
+
+    <div class="contacthdrbox">
+      <h2 class="contactheader">Contact Us:</h2>
+    </div>
+    <div class="contact" id="contactdiv">
+      <p>
+        <b>Email:</b> contact.virtus@gmail.com<br />
+        <b>Phone Number:</b> 055 123 4567<br />
+      </p>
+    </div>
+
+    <div class="footer">
+      <h3>Virtus</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book A Ride</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <p class="msg">Made by Shaun, Khadija, Zahid, Jashan.</p>
+      </ul>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
