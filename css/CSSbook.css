@@ -121,6 +121,7 @@ body {
   width: 41px;
   height: 40px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .bookride .dltext {
@@ -151,6 +152,7 @@ body {
   width: 41px;
   height: 40px;
   padding: 5px;
+  cursor: pointer;
 }
 
 /*map stuff*/
