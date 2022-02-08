@@ -82,7 +82,7 @@ function signout() {
 
 
 function logincheckerbook() {
-    if (localStorage.getItem("loginkey") == "1") {
+    if (localStorage.getItem("loginkey") == "1" || localStorage.getItem("loginkey") == "2") {
       document.getElementById("submit-btn3").href = "booked.html";
       document.getElementById("submit-btn4").href = "booked.html";
       document.getElementById("confirm-btn").href = "booked.html";
