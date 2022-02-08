@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Details</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Righteous&display=swap");
+      body {
+        margin: 0px;
+        font-family: Poppins, Helvetica, sans-serif;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        transition-duration: 0.3s;
+        position: relative;
+      }
+      .topnav a:hover {
+        color: white;
+      }
+      .topnav a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 80%;
+        height: 2px;
+        top: 37px;
+        left: 14px;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      .topnav .home::before {
+        width: 66%;
+      }
+      .topnav .drive::before {
+        width: 69%;
+      }
+      .topnav .mission::before {
+        width: 76%;
+      }
+      .topnav .login::before {
+        background-color: transparent;
+      }
+      .topnav .login:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .topnav a:hover::before {
+        transform: scaleX(1);
+      }
+      .topnav a.home {
+        background-color: #003366;
+      }
+      .topnav a.login {
+        float: right;
+        margin-right: 0px;
+      }
+
+      .image {
+        height: 300px;
+        overflow: hidden;
+        object-fit: cover;
+        width: 100%;
+      }
+      .details {
+        margin-left: 50px;
+      }
+      .details p {
+        margin-top: 0px;
+        margin-bottom: 5px;
+      }
+
+      /*map*/
+      .mapdiv {
+        margin-left: 50px;
+      }
+      .mapcontainer {
+        height: 300px;
+        width: 90%;
+        overflow: hidden;
+      }
+
+      /*help button*/
+      .helpdiv {
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+      }
+      .help-btn {
+        border: none;
+        text-decoration: none;
+        background-color: #003366;
+        color: white;
+        padding: 8px 10px;
+        transition-duration: 0.3s;
+        position: relative;
+      }
+      .help-btn:hover {
+        color: white;
+      }
+      .help-btn::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 90%;
+        height: 2px;
+        bottom: 6px;
+        left: 10px;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      .help-btn:hover::before {
+        transform: scaleX(1);
+      }
+      /*footer stlying*/
+      .footer {
+        background-color: #333;
+        color: #ffffff;
+        margin-bottom: -100px;
+        margin-top: 10px;
+        padding: 10px 10px;
+      }
+      .footer h3 {
+        padding-left: 30px;
+      }
+      .footer li {
+        list-style: none;
+        margin-bottom: 2px;
+      }
+      .footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .footer .msg {
+        font-family: monospace;
+        opacity: 0.5;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body onload="popup()">
+    <div class="topnav">
+      <a class="home" href="index.html">Home</a>
+      <a class="book" href="book.html">Book A Ride</a>
+      <a class="drive" href="safety.html">Safety</a>
+      <a class="mission" href="about.html">About Us</a>
+    </div>
+
+    <div class="image">
+      <img src="images/person in wheelchair.jpg" height="890" width="auto" />
+    </div>
+
+    <div class="details">
+      <h1>Ride Details:</h1>
+      <p id="timetext">Your car will reach you in: 7 mins</p>
+      <p id="cartype">Car Details: Blue Ford Explorer</p>
+      <p>License Plate Number: A11223</p>
+      <p>Driver Name: Rohit Sharma</p>
+    </div>
+
+    <div class="mapdiv">
+      <h2>Your driver's current location:</h2>
+      <div class="mapcontainer">
+        <p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.517263725978!2d55.36348411429698!3d25.2531793356257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0693260e69%3A0xe695d4007a48eee9!2sDubai%20International%20Airport!5e0!3m2!1sen!2sae!4v1644335827063!5m2!1sen!2sae"
+            width="800"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </p>
+      </div>
+    </div>
+    <div class="helpdiv">
+      <a class="help-btn" href="about.html#contactdiv"
+        >Need Help? Click Here.</a
+      >
+    </div>
+
+    <div class="footer">
+      <h3>Virtus</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book A Ride</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <p class="msg">Made by Shaun, Khadija, Zahid, Jashan.</p>
+      </ul>
+    </div>
+    <script>
+      if (localStorage.getItem("dateval") == "1") {
+        document.getElementById("timetext").innerText =
+          "Your ride is booked for: " + localStorage.getItem("date");
+        localStorage.removeItem("dateval");
+      }
+
+      function popup() {
+        swal(
+          "Ride Booked!",
+          "Payment will be deducted after ride ends.",
+          "success"
+        );
+
+        if (localStorage.getItem("vehicle") == "SUV") {
+          document.getElementById("cartype").innerText =
+            "Car Details: Blue Ford Explorer";
+        }
+        if (localStorage.getItem("vehicle") == "VAN") {
+          document.getElementById("cartype").innerText =
+            "Car Details: Red Chrysler Pacifica";
+        }
+      }
+      function initMap() {
+        var location = { lat: 25.2048493, lng: 55.2707828 };
+        var map = new googl.maps.Map(document.getElementById("#map"), {
+          zoom: 4,
+          center: location,
+        });
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1G2WVJiq9flolsNLVdf42lsQTEohpuuM&callback=initMap"
+    ></script>
+  </body>
+</html>
